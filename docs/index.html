@@ -1,1 +1,414 @@
-<html></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"><link href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css" rel="stylesheet">
+
+    <style>
+      :root{
+        /* color scheme is based on https://github.com/sonph/onehalf */
+        /* dark */
+        --color-dark-black: #282c34;
+        --color-dark-red: #e06c75;
+        --color-dark-green: #98c379;
+        --color-dark-yellow: #e5c07b;
+        --color-dark-blue: #61afef;
+        --color-dark-magenta: #c678dd;
+        --color-dark-cyan: #56b6c2;
+        --color-dark-white: #dcdfe4;
+        --color-dark-foreground: #dcdfe4;
+        --color-dark-background: #282c34;
+        --color-dark-gray-dark: #727375;
+        --color-dark-gray-light: #3a3a3a;
+        /* light */
+        --color-light-black: #383a42;
+        --color-light-red: #e45649;
+        --color-light-green: #50a14f;
+        --color-light-yellow: #c18401;
+        --color-light-blue: #0184bc;
+        --color-light-magenta: #a626a4;
+        --color-light-cyan: #0997b3;
+        --color-light-white: #fafafa;
+        --color-light-foreground: #383a42;
+        --color-light-background: #fafafa;
+        --color-light-gray-dark: #8c95a6;
+        --color-light-gray-light: #d4d7de;
+        /* by default, use dark */
+        --color-black: var(--color-dark-black);
+        --color-red: var(--color-dark-red);
+        --color-green: var(--color-dark-green);
+        --color-yellow: var(--color-dark-yellow);
+        --color-blue: var(--color-dark-blue);
+        --color-magenta: var(--color-dark-magenta);
+        --color-cyan: var(--color-dark-cyan);
+        --color-white: var(--color-dark-white);
+        --color-foreground:var(--color-dark-foreground);
+        --color-background: var(--color-dark-background);
+        --color-gray-dark: var(--color-dark-gray-dark);
+        --color-gray-light: var(--color-dark-gray-light);
+
+        --global-space: 1em;
+      }
+
+      :target {
+        /*border: 1px solid var(--color-foreground);*/
+        padding: 1em;
+        border-left: .5em solid var(--color-gray-light);
+      }
+
+      /*::-moz-selection {
+        background: var(--primary-color);
+        color: var(--invert-font-color)
+      }
+
+      ::selection {
+        background: var(--primary-color);
+        color: var(--invert-font-color)
+      }*/
+
+      body {
+        background-color: var(--color-background);
+        color: var(--color-foreground);
+        font-family: 'Cutive Mono, Ubuntu Mono', monospace, 'Noto Sans SC', cursive;
+        font-size: 1em;
+      }
+
+      a {
+        color: var(--color-cyan);
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--color-cyan);
+        text-decoration: underline;
+      }
+
+      b {
+        font-weight: 700;
+      }
+
+      .padding {
+        height: 5em;
+      }
+
+      #logo {
+        color: var(--color-foreground);
+      }
+
+      ul {
+        float: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        position: relative;
+        display: block;
+        padding-left: calc(var(--global-space) * 2);
+      }
+
+      li::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      ul>li::after {
+        content: "-"
+      }
+
+      nav ul {
+        list-style-type: none;
+      }
+
+      nav li {
+        padding-left: 0;
+      }
+
+      nav ul>li::after {
+        content: "";
+      }
+
+      nav li a {
+        color: var(--color-blue);
+        text-decoration: none;
+      }
+
+      nav li a:hover {
+        text-decoration: none;
+        color: var(--color-white);
+        background-color: var(--color-green);
+      }
+
+      .prompt {
+        font-weight: 700;
+        font-size: 1.18em;
+      }
+
+      .prompt-name {
+        color: var(--color-green);
+      }
+
+      .prompt-location {
+        color: var(--color-blue);
+      }
+
+      .pub-author {
+        color: var(--color-foreground);
+      }
+
+      .pub-author-me {
+        color: var(--color-red);
+        font-weight: bold;
+      }
+
+      .pub-title {
+        color: var(--color-yellow);
+      }
+
+      .pub-book {
+        color: var(--color-blue);
+      }
+
+      .puc-date {
+        color: var(--color-magenta);
+      }
+
+      .btn-link {
+        color: var(--color-gray-dark);
+      }
+
+      a.btn-link:hover  {
+        color: var(--color-cyan);
+      }
+
+      .prompt-cursor::after {
+        content: "";
+        -webkit-animation: cursor 1s infinite;
+        animation: cursor 1s infinite;
+        background: var(--color-foreground);
+        border-radius: 0;
+        display: inline-block;
+        height: 1em;
+        margin-left: 0;
+        width: 0.5em;
+        bottom: -0.2em;
+        position: relative;
+      }
+
+      @-webkit-keyframes cursor {
+        0% {
+          opacity: 0
+        }
+        50% {
+          opacity: 0.8
+        }
+        to {
+          opacity: 0
+        }
+      }
+
+      @keyframes cursor {
+        0% {
+          opacity: 0
+        }
+        50% {
+          opacity: 0.8
+        }
+        to {
+          opacity: 0
+        }
+      }
+
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+        height: 2em;
+        width: 100%;
+      }
+
+      .status-bar {
+        margin: 0;
+        padding: 0;
+        line-height: 2em;
+        border: 1px solid var(--color-gray-dark);
+        border-top: none;
+      }
+
+      .status-bar-left {
+        background-color: var(--color-gray-dark);
+        color: var(--color-background);
+        padding-left: 1em;
+        text-align: left;
+      }
+
+      .status-bar-left a {
+        color: var(--color-background);
+      }
+
+      .status-bar-left a:hover {
+        color: var(--color-red);
+        text-decoration: none;
+      }
+
+      .status-bar-right {
+        background-color: var(--color-gray-light);
+        color: var(--color-foreground);
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .main {
+        border: 1px solid var(--color-gray-dark);
+      }
+    </style>
+
+    <title>YYX Research - Yixiang Yao's research home page</title>
+  </head>
+  <body data-theme-mode="dark">
+
+    <div class="container main">
+      <div class="row">
+        <div class="col col-12 padding"></div>
+
+        <div class="col col-md-2 d-none d-lg-block">
+          <nav>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#publications">Publications</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col col-md-10">
+          <div>
+            <pre id="logo" class="d-none d-lg-block d-xl-block text-left">
+ ____ ____ ____ _________ ____ ____ ____ ____ ____ ____ ____ ____                
+||Y |||Y |||X |||       |||R |||e |||s |||e |||a |||r |||c |||h ||               
+||__|||__|||__|||_______|||__|||__|||__|||__|||__|||__|||__|||__||               
+|/__\|/__\|/__\|/_______\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\| version: 0.0.7
+            </pre>
+            <pre id="logo" class="d-block d-sm-block d-md-block d-lg-none d-xl-none text-left">
+ ____ ____ ____            
+||Y |||Y |||X ||           
+||__|||__|||__||           
+|/__\|/__\|/__\| ver: 0.0.7
+            </pre>
+          </div>
+
+          <div id="about" class="">
+            <p class="prompt"><span class="prompt-name">yyx@lab</span><span class="prompt-location"> ~ $ </span>whoami</p>
+            <p>My name is <b>Yixiang Yao</b> (IPA <i>/i:ʃiɔ:n jaʊ/</i>), <b>姚一翔</b> in Chinese, a.k.a. <b>YYX</b>.</p>
+            <p>I'm an incoming Computer Science Ph.D. student at <a href="http://usc-isi-i2.github.io/" target="_blank">Center on Knowledge Graphs</a>, <a href="https://www.usc.edu/" target="_blank">University of Southern California</a>, <a href="https://isi.edu/" target="_blank">Information Sciences Institute</a>, advised by <a href="http://usc-isi-i2.github.io/szekely/" target="_blank">Prof. Pedro Szekely</a>. Before this, I worked for startup companies, enterprises and research institute for years.</p>
+            <p>My Research interests include but not limited to Information Extraction and Integration, Knowledge Representation and Reasoning, Information Retrieval, Distributed Computing, Cyber Security and Privacy.</p>
+            <p>
+              <a href="#" class="btn-link"><i class="ai fa-lg ai-google-scholar-square"></i></a>
+              <a href="https://github.com/greatyyx" class="btn-link"><i class="fab fa-lg fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/yxyao/" class="btn-link"><i class="fab fa-lg fa-linkedin"></i></a>
+            </p>
+          </div>
+
+          <div id="publications" class="mt-5">
+            <p class="prompt"><span class="prompt-name">yyx@lab</span><span class="prompt-location"> ~ $ </span>ls -t ~/Publications/* | xargs cat</p>
+            <ul>
+              <li>
+                <span class="pub-author">Pedro Szekely, Daniel Garijo, Divij Bhatia, Jiasheng Wu, <span class="pub-author-me">Yixiang Yao</span>, Jay Pujara.</span> <span class="pub-title">"T2WML: Table To Wikidata Mapping Language."</span> <span class="pub-book">In Proceedings of the 10th International Conference on Knowledge Capture, pp. 267-270.</span> <span class="puc-date">2019.</span> <a href="#" target="_blank" class="btn-link"><i class="fa fa-file-alt"></i></a> <a href="#" target="_blank" class="btn-link"><i class="fa fa-quote-right"></i></a>
+              </li>
+              <li>
+                <span class="pub-author"><span class="pub-author-me">Yixiang Yao</span>, Pedro Szekely, Jay Pujara</span> <span class="pub-title">"Extensible and Scalable Entity Resolution for Financial Datasets Using RLTK."</span> <span class="pub-book">In Proceedings of the 5th Workshop on Data Science for Macro-modeling with Financial and Economic Datasets, pp. 1-1.</span> <span class="puc-date">2019.</span> <a href="#" target="_blank" class="btn-link"><i class="fa fa-file-alt"></i></a> <a href="#" target="_blank" class="btn-link"><i class="fa fa-quote-right"></i></a>
+              </li>
+              <li>
+                <span class="pub-author">Craig A Knoblock, Pedro Szekely, Eleanor Fink, Duane Degler, David Newbury, Robert Sanderson, Kate Blanch, Sara Snyder, Nilay Chheda, Nimesh Jain, Ravi Raju Krishna, Nikhila Begur Sreekanth, <span class="pub-author-me">Yixiang Yao</span></span> <span class="pub-title">"Lessons learned in building linked data for the American art collaborative."</span> <span class="pub-book">In International Semantic Web Conference, pp. 263-279.</span> <span class="puc-date">Springer, Cham, 2017.</span> <a href="#" target="_blank" class="btn-link"><i class="fa fa-file-alt"></i></a> <a href="#" target="_blank" class="btn-link"><i class="fa fa-quote-right"></i></a>
+              </li>
+              <li>
+                <span class="pub-author">Craig A Knoblock, Pedro A Szekely, Eleanor E Fink, Duane Degler, David Newbury, Robert Sanderson, Kate Blanch, Sara Snyder, Nilay Chheda, Nimesh Jain, Ravi Raju Krishna, Nikhila Begur Sreekanth, <span class="pub-author-me">Yixiang Yao</span>.</span> <span class="pub-title">"A Demonstration of Tools for Building Linked Data for the American Art Collaborative."</span> <span class="pub-book">In International Semantic Web Conference (Posters, Demos & Industry Tracks).</span> <span class="puc-date">2017.</span> <a href="#" target="_blank" class="btn-link"><i class="fa fa-file-alt"></i></a> <a href="#" target="_blank" class="btn-link"><i class="fa fa-quote-right"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="projects" class="mt-5">
+            <p class="prompt"><span class="prompt-name mt-3">yyx@lab</span><span class="prompt-location"> ~ $ </span>ls ~/Projects/* | xargs cat</p>
+            <ul>
+              <li>
+                <span class="">RLTK: Record Linkage Toolkit</span> <a href="https://github.com/usc-isi-i2/rltk" target="_blank" class="btn-link"><i class="fas fa-external-link-alt"></i></a>
+              </li>
+              <li>
+                <span class="">Pyrallel: Yet another easy-to-use python3 parallel library for humans.
+</span> <a href="https://github.com/usc-isi-i2/pyrallel" target="_blank" class="btn-link"><i class="fas fa-external-link-alt"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div id="contact" class="mt-5">
+            <p class="prompt"><span class="prompt-name mt-3">yyx@lab</span><span class="prompt-location"> ~ $ </span> cat ~/Contact</p>
+            <p><i class="far fa-envelope"></i> yixiangy<i class="fas fa-at"></i>isi.edu</p>
+            <p><i class="fas fa-map-marker-alt"></i> 4676 Admiralty Way #1001, Marina del Rey, CA 90292, USA</p>
+            <!-- <p><i class="fas fa-key"></i> </p> -->
+            <!-- <p><i class="fas fa-rss"></i></p> -->
+          </div>
+
+          <div id="tbd" class="mt-5">
+            <p class="prompt"><span class="prompt-name mt-3">yyx@lab</span><span class="prompt-location prompt-cursor"> ~ $ </span>
+          </div>
+
+          <div class="col col-12 padding"></div>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col col-md-10 status-bar status-bar-left"><a href="https://github.com/GreatYYX/term-research-page">Built with <i class="fa fa-heart"></i> by YYX</a></div>
+          <div class="col col-md-2 status-bar status-bar-right" id="theme-switch">Dark Mode</div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      function set_color(mode, names) {
+        names.forEach(function(name){
+          var prop1 = "--color-" + name;
+          var prop2 = "--color-" + mode + "-" + name;
+          document.documentElement.style.setProperty(prop1, getComputedStyle(document.documentElement).getPropertyValue(prop2));
+        });
+      }
+
+      function swith_theme_mode() {
+        var current_mode = document.body.getAttribute("data-theme-mode");
+        if (current_mode == "dark") {
+          // switch to light
+          set_color("light", [
+            "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white", 
+            "foreground", "background", "gray-dark", "gray-light"]);
+          document.body.setAttribute("data-theme-mode", "light");
+          document.getElementById("theme-switch").innerHTML = "Light Mode";
+        } else {
+          // switch to dark
+          set_color("dark", [
+            "black", "red", "green", "yellow", "blue", "magenta", "cyan", "white", 
+            "foreground", "background", "gray-dark", "gray-light"]);
+          document.body.setAttribute("data-theme-mode", "dark");
+          document.getElementById("theme-switch").innerHTML = "Dark Mode";
+        }
+      }
+
+      (function () {
+        document.getElementById("theme-switch").addEventListener("click", swith_theme_mode);
+      })();   
+    </script>
+  </body>
+</html>
