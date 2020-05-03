@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;400;700&display=swap" rel="stylesheet">
 
     <!-- icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"><link href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css" rel="stylesheet">
 
     <style>
       :root{
@@ -417,9 +418,10 @@
         });
       }
 
-      function swith_theme_mode() {
-        var dark_mode = (localStorage.getItem("theme-mode") === "dark");
-        console.log(dark_mode);
+      function set_theme_mode(toggle=true) {
+        var dark_mode = (localStorage.getItem("theme-mode") === null 
+          || localStorage.getItem("theme-mode") === "dark");
+        dark_mode = toggle ? dark_mode : !dark_mode;
         if (dark_mode) {
           // switch to light
           set_color("light", [
@@ -438,10 +440,8 @@
       }
 
       (function () {
-        if(localStorage.getItem("theme-mode") === null) {
-          localStorage.setItem("theme-mode", "dark");
-        }
-        document.getElementById("theme-switch").addEventListener("click", swith_theme_mode);
+        set_theme_mode(false);
+        document.getElementById("theme-switch").addEventListener("click", set_theme_mode);
       })();   
     </script>
   </body>
