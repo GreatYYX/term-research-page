@@ -307,31 +307,23 @@
           </nav>
         </div>
         <div class="col col-md-10">
-          <div>
-            <pre id="logo" class="d-none d-lg-block d-xl-block text-left">
- ____ ____ ____ _________ ____ ____ ____ ____ ____ ____ ____ ____                
-||Y |||Y |||X |||       |||R |||e |||s |||e |||a |||r |||c |||h ||               
-||__|||__|||__|||_______|||__|||__|||__|||__|||__|||__|||__|||__||               
-|/__\|/__\|/__\|/_______\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\| version: 0.0.7
-            </pre>
-            <pre id="logo" class="d-block d-sm-block d-md-block d-lg-none d-xl-none text-left">
- ____ ____ ____            
-||Y |||Y |||X ||           
-||__|||__|||__||           
-|/__\|/__\|/__\| ver: 0.0.7
-            </pre>
-          </div>
+          <div id="logo"></div>
 
-          <div id="about" class="">
+          <div id="about">
             <p class="prompt"><span class="prompt-name">yyx@lab</span><span class="prompt-location"> ~ $ </span>whoami</p>
-            <p>My name is <b>Yixiang Yao</b> (IPA <i>/i:ʃiɔ:n jaʊ/</i>), <b>姚一翔</b> in Chinese, a.k.a. <b>YYX</b>.</p>
-            <p>I'm an incoming Computer Science Ph.D. student at <a href="http://usc-isi-i2.github.io/" target="_blank">Center on Knowledge Graphs</a>, <a href="https://www.usc.edu/" target="_blank">University of Southern California</a>, <a href="https://isi.edu/" target="_blank">Information Sciences Institute</a>, advised by <a href="http://usc-isi-i2.github.io/szekely/" target="_blank">Prof. Pedro Szekely</a>. Before this, I worked for startup companies, enterprises and research institute for years.</p>
-            <p>My Research interests include but not limited to Information Extraction and Integration, Knowledge Representation and Reasoning, Information Retrieval, Distributed Computing, Cyber Security and Privacy.</p>
-            <p>
-              <a href="#" class="btn-link"><i class="ai fa-lg ai-google-scholar-square"></i></a>
-              <a href="https://github.com/greatyyx" class="btn-link"><i class="fab fa-lg fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/yxyao/" class="btn-link"><i class="fab fa-lg fa-linkedin"></i></a>
-            </p>
+            <div class="row">
+              <div class="col-md-12 col-lg-7">
+                <p>My name is <b>Yixiang Yao</b> (IPA <i>/i:ʃiɔ:n jaʊ/</i>), <b>姚一翔</b> in Chinese, a.k.a. <b>YYX</b>.</p>
+                <p>I'm an incoming Computer Science Ph.D. student at <a href="http://usc-isi-i2.github.io/" target="_blank">Center on Knowledge Graphs</a>, <a href="https://www.usc.edu/" target="_blank">University of Southern California</a>, <a href="https://isi.edu/" target="_blank">Information Sciences Institute</a>, advised by <a href="http://usc-isi-i2.github.io/szekely/" target="_blank">Prof. Pedro Szekely</a>. Before this, I worked for startup companies, enterprises and research institute for years.</p>
+                <p>My Research interests include but not limited to Information Extraction and Integration, Knowledge Representation and Reasoning, Information Retrieval, Distributed Computing, Cyber Security and Privacy.</p>
+                <p>
+                  <a href="#" class="btn-link"><i class="ai fa-lg ai-google-scholar-square"></i></a>
+                  <a href="https://github.com/greatyyx" class="btn-link"><i class="fab fa-lg fa-github"></i></a>
+                  <a href="https://www.linkedin.com/in/yxyao/" class="btn-link"><i class="fab fa-lg fa-linkedin"></i></a>
+                </p>
+              </div>
+              <div class="col-md-12 col-lg-5" style="font-size: 0.1em" id="profile-picture"></div>
+            </div><!--row-->
           </div>
 
           <div id="publications" class="mt-5">
@@ -417,7 +409,8 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript">
+
+    <script>
       function set_color(mode, names) {
         names.forEach(function(name){
           var prop1 = "--color-" + name;
@@ -447,9 +440,30 @@
         }
       }
 
+      function load_content(element_id, page) {
+        xhr = new XMLHttpRequest();
+        if (!xhr) {
+          return false;
+        }
+        xhr.open('GET', page, false);
+        xhr.onreadystatechange = function(e) {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              document.getElementById(element_id).innerHTML = xhr.responseText;
+            } else {
+              console.log(xhr.statusText);
+            }
+          }
+        }
+        xhr.send(null);
+      }
+
       (function () {
         set_theme_mode(false);
         document.getElementById("theme-switch").addEventListener("click", set_theme_mode);
+
+        load_content('logo', 'logo.html');
+        load_content('profile-picture', 'profile-picture.html');
       })();   
     </script>
 
