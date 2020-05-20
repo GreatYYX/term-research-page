@@ -203,10 +203,17 @@
       }
 
       .pub-bib {
-        white-space: pre-wrap;
+        /*white-space: pre-wrap;*/
         color: var(--color-foreground);
         padding: 0.5em;
         border: 1px solid var(--color-foreground);
+      }
+
+      [aria-expanded="false"] .fa {
+        color: var(--color-gray-dark); /* same to .btn-link */
+      }
+      [aria-expanded="true"] .fa {
+        color: var(--color-green);
       }
 
       .btn-link {
