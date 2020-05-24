@@ -1,0 +1,283 @@
+:root{
+  /* color scheme is based on https://github.com/sonph/onehalf */
+  /* dark */
+  --color-dark-black: #282c34;
+  --color-dark-red: #e06c75;
+  --color-dark-green: #98c379;
+  --color-dark-yellow: #e5c07b;
+  --color-dark-blue: #61afef;
+  --color-dark-magenta: #c678dd;
+  --color-dark-cyan: #56b6c2;
+  --color-dark-white: #dcdfe4;
+  --color-dark-foreground: #dcdfe4;
+  --color-dark-background: #282c34;
+  --color-dark-gray-dark: #727375;
+  --color-dark-gray-light: #3a3a3a;
+  /* light */
+  --color-light-black: #383a42;
+  --color-light-red: #e45649;
+  --color-light-green: #50a14f;
+  --color-light-yellow: #c18401;
+  --color-light-blue: #0184bc;
+  --color-light-magenta: #a626a4;
+  --color-light-cyan: #0997b3;
+  --color-light-white: #fafafa;
+  --color-light-foreground: #383a42;
+  --color-light-background: #fafafa;
+  --color-light-gray-dark: #8c95a6;
+  --color-light-gray-light: #d4d7de;
+  /* by default, use dark */
+  --color-black: var(--color-dark-black);
+  --color-red: var(--color-dark-red);
+  --color-green: var(--color-dark-green);
+  --color-yellow: var(--color-dark-yellow);
+  --color-blue: var(--color-dark-blue);
+  --color-magenta: var(--color-dark-magenta);
+  --color-cyan: var(--color-dark-cyan);
+  --color-white: var(--color-dark-white);
+  --color-foreground:var(--color-dark-foreground);
+  --color-background: var(--color-dark-background);
+  --color-gray-dark: var(--color-dark-gray-dark);
+  --color-gray-light: var(--color-dark-gray-light);
+
+  --global-space: 1em;
+}
+
+:target {
+  /*border: 1px solid var(--color-foreground);*/
+  padding: 1em;
+  border-left: .5em solid var(--color-gray-light);
+}
+
+/*::-moz-selection {
+  background: var(--primary-color);
+  color: var(--invert-font-color)
+}
+
+::selection {
+  background: var(--primary-color);
+  color: var(--invert-font-color)
+}*/
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: 'Cutive Mono, Ubuntu Mono', monospace, 'Noto Sans SC', cursive;
+  font-size: 1em;
+}
+
+a {
+  color: var(--color-cyan);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-cyan);
+  text-decoration: underline;
+}
+
+b {
+  font-weight: 700;
+}
+
+pre {
+  font-family: 'Cutive Mono, Ubuntu Mono', monospace;
+  font-size: 0.8em;
+}
+
+.padding {
+  height: 5em;
+}
+
+#logo {
+  color: var(--color-foreground);
+}
+
+#profile-picture {
+  font-size: 0.5em;
+}
+
+ul {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  display: block;
+  padding-left: calc(var(--global-space) * 2);
+  margin-bottom: var(--global-space);
+}
+
+li::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+ul>li::after {
+  content: "-"
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav li {
+  padding-left: 0;
+}
+
+nav ul>li::after {
+  content: "";
+}
+
+nav li a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+nav li a:hover {
+  text-decoration: none;
+  color: var(--color-white);
+  background-color: var(--color-green);
+}
+
+.prompt {
+  font-weight: 700;
+  font-size: 1.18em;
+}
+
+.prompt-name {
+  color: var(--color-green);
+}
+
+.prompt-location {
+  color: var(--color-blue);
+}
+
+.pub-author {
+  color: var(--color-foreground);
+}
+
+.pub-author-me {
+  color: var(--color-red);
+  font-weight: bold;
+}
+
+.pub-title {
+  color: var(--color-yellow);
+}
+
+.pub-book {
+  color: var(--color-blue);
+}
+
+.pub-date {
+  color: var(--color-magenta);
+}
+
+.pub-bib {
+  /*white-space: pre-wrap;*/
+  color: var(--color-foreground);
+  padding: 0.5em;
+  border: 1px solid var(--color-foreground);
+}
+
+[aria-expanded="false"] .fa {
+  color: var(--color-gray-dark); /* same to .btn-link */
+}
+[aria-expanded="true"] .fa {
+  color: var(--color-green);
+}
+
+.btn-link {
+  color: var(--color-gray-dark);
+}
+
+a.btn-link:hover  {
+  color: var(--color-cyan);
+}
+
+.prompt-cursor::after {
+  content: "";
+  -webkit-animation: cursor 1s infinite;
+  animation: cursor 1s infinite;
+  background: var(--color-foreground);
+  border-radius: 0;
+  display: inline-block;
+  height: 1em;
+  margin-left: 0;
+  width: 0.5em;
+  bottom: -0.2em;
+  position: relative;
+}
+
+@-webkit-keyframes cursor {
+  0% {
+    opacity: 0
+  }
+  50% {
+    opacity: 0.8
+  }
+  to {
+    opacity: 0
+  }
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0
+  }
+  50% {
+    opacity: 0.8
+  }
+  to {
+    opacity: 0
+  }
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  height: 2em;
+  width: 100%;
+}
+
+.status-bar {
+  margin: 0;
+  padding: 0;
+  line-height: 2em;
+  border: 1px solid var(--color-gray-dark);
+  border-top: none;
+}
+
+.status-bar-left {
+  background-color: var(--color-gray-dark);
+  color: var(--color-background);
+  padding-left: 1em;
+  text-align: left;
+}
+
+.status-bar-left a {
+  color: var(--color-background);
+}
+
+.status-bar-left a:hover {
+  color: var(--color-red);
+  text-decoration: none;
+}
+
+.status-bar-right {
+  background-color: var(--color-gray-light);
+  color: var(--color-foreground);
+  text-align: center;
+  cursor: pointer;
+}
+
+.main {
+  border: 1px solid var(--color-gray-dark);
+}
