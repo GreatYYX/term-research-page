@@ -91,6 +91,7 @@ pre {
 
 #logo {
   color: var(--color-foreground);
+  font-size: 0.8em;
 }
 
 #profile-picture {
