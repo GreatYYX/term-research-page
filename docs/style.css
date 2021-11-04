@@ -84,7 +84,6 @@ pre {
   font-family: 'Cutive Mono, Ubuntu Mono', monospace;
   font-size: 0.8em;
 }
-
 .padding {
   height: 5em;
 }
@@ -95,7 +94,16 @@ pre {
 }
 
 #profile-picture {
-  font-size: 0.5em;
+  font-size: 0.1em;
+  display: inline-block;
+  font-family: "Ubuntu Mono", monospace;
+  letter-spacing: 0em;
+  line-height: 8em;
+}
+
+#profile-picture pre {
+  text-align: right;
+  white-space: pre-line;
 }
 
 ul {
@@ -280,5 +288,5 @@ footer {
 }
 
 .main {
-  border: 1px solid var(--color-gray-dark);
+  /*border: 1px solid var(--color-gray-dark);*/
 }
