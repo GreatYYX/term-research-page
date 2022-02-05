@@ -94,14 +94,10 @@ pre {
 }
 
 #profile-picture {
-  font-size: 0.1em;
+  font-size: 0.3em;
   display: inline-block;
   font-family: "Ubuntu Mono", monospace;
-  letter-spacing: 0em;
-  line-height: 8em;
-}
-
-#profile-picture pre {
+  letter-spacing: 0.3em;
   text-align: right;
   white-space: pre-line;
 }
