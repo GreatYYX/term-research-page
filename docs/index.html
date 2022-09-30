@@ -55,7 +55,7 @@
             <div class="row">
               <div class="col col-12 col-lg-8">
                 <p>My name is <b>Yixiang Yao</b> (IPA <i>/i:ʃiɔ:n jaʊ/</i>), <b>姚一翔</b> in Chinese, a.k.a. <b>YYX</b>.</p>
-                <p>I'm an incoming Computer Science Ph.D. student at <a href="http://usc-isi-i2.github.io/" target="_blank">Center on Knowledge Graphs</a>, <a href="https://www.usc.edu/" target="_blank">University of Southern California</a>, <a href="https://isi.edu/" target="_blank">Information Sciences Institute</a>, advised by <a href="http://usc-isi-i2.github.io/szekely/" target="_blank">Prof. Pedro Szekely</a> and <a href="https://sites.usc.edu/srivatsr/" target="_blank">Prof. Srivatsan Ravi</a>. <!-- I also work(ed) with <a href="https://usc-isi-i2.github.io/knoblock/" target="_blank">Prof. Craig Knoblock</a>, <a href="https://www.jaypujara.org/" target="_blank">Prof. Jay Pujara</a> and <a href="https://usc-isi-i2.github.io/ilievski/" target="_blank">Dr. Filip Ilievski</a> in many projects. --> Prior to this, I worked for startup companies, enterprises and research institute for years.</p>
+                <p>I'm a Computer Science Ph.D. student at <a href="http://usc-isi-i2.github.io/" target="_blank">Center on Knowledge Graphs</a>, <a href="https://www.usc.edu/" target="_blank">University of Southern California</a>, <a href="https://isi.edu/" target="_blank">Information Sciences Institute</a>, advised by <a href="https://sites.usc.edu/srivatsr/" target="_blank">Prof. Srivatsan Ravi</a>. I also worked with <a href="http://usc-isi-i2.github.io/szekely/" target="_blank">Prof. Pedro Szekely</a> previously in a lot of exciting projects. Prior to this, I worked for startup companies, enterprises and research institute for years.</p>
                 <p>My Research interests include but not limited to Information Extraction and Integration, Knowledge Representation and Reasoning, and Privacy-enhancing technologies.</p>
                 <p>
                   <a href="#" class="btn-link"><i class="ai fa-lg ai-google-scholar-square"></i></a>
@@ -71,6 +71,22 @@
           <div id="publications" class="mt-5">
             <p class="prompt"><span class="prompt-name">yyx@lab</span><span class="prompt-location"> ~ $ </span>ls -t ~/Publications/* | xargs cat</p>
             <ul>
+              <li>
+                <span class="pub-title">Evaluating the Feasibility of a Provably Secure Privacy-Preserving Entity Resolution Adaptation of PPJoin using Homomorphic Encryption</span><br>
+                <span class="pub-author">Tanmay Ghai, <span class="pub-author-me">Yixiang Yao</span>, Srivatsan Ravi, and Pedro Szekely.</span><br>
+                <span class="pub-book">arXiv preprint</span><br>
+                <span class="pub-date">arXiv:2208.07999</span>
+                <a href="publications/ghai2022evaluating.pdf" class="btn-link"><i class="fa fa-file-alt"></i></a>
+                <a data-toggle="collapse" href="#pub-bib-ghai2022evaluating" aria-expanded="false" aria-controls="pub-bib-ghai2022evaluating" class="btn-link"><i class="fa fa-quote-right"></i></a>
+                <div class="collapse" id="pub-bib-ghai2022evaluating">
+                  <pre class="pub-bib">@article{ghai2022evaluating,
+  title={Evaluating the Feasibility of a Provably Secure Privacy-Preserving Entity Resolution Adaptation of PPJoin using Homomorphic Encryption},
+  author={Ghai, Tanmay and Yao, Yixiang and Ravi, Srivatsan and Szekely, Pedro},
+  journal={arXiv preprint arXiv:2208.07999},
+  year={2022}
+}</pre>
+                </div>
+              </li>
               <li>
                 <span class="pub-title">AMPPERE: A Universal Abstract Machine for Privacy-Preserving Entity Resolution Evaluation</span><br>
                 <span class="pub-author"><span class="pub-author-me">Yixiang Yao</span>, Tanmay Ghai, Srivatsan Ravi, and Pedro Szekely.</span><br>
@@ -208,7 +224,7 @@
           </div>
 
           <div id="projects" class="mt-5">
-            <p class="prompt"><span class="prompt-name mt-3">yyx@lab</span><span class="prompt-location"> ~ $ </span>ls ~/Projects/* | xargs cat</p>
+            <p class="prompt"><span class="prompt-name mt-3">yyx@lab</span><span class="prompt-location"> ~ $ </span>ls ~/Projects/* | head -n 2 | xargs cat</p>
             <ul>
               <li>
                 <span class="">RLTK: Record Linkage Toolkit</span>
@@ -230,8 +246,9 @@
           </div>
 
           <div id="last-modified" class="mt-5">
-            <p class="prompt"><span class="prompt-name mt-3">yyx@lab</span><span class="prompt-location"> ~ $ </span> echo "Last updated: $(find . -type f -exec stat \{} --printf="%y\n \; | sort -n -r | head -n 1)"</p>
-            <p>Last updated: 2021-11-23 17:16:15.806886003 -0800</p>
+            <p class="prompt"><span class="prompt-name mt-3">yyx@lab</span><span class="prompt-location"> ~ $ </span> echo Last updated: $(find . -type f -printf "%C+\n" | sort -n | tail -n1)</p>
+            <!-- macOS: install findutils and replace find to be gfind -->
+            <p>Last updated: 2022-09-30+14:54:53.2682107730</p>
           </div>
 
           <div id="tbd" class="mt-5">
