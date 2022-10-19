@@ -286,3 +286,16 @@ footer {
 .main {
   /*border: 1px solid var(--color-gray-dark);*/
 }
+
+#name-phonetic {
+  display: none;
+}
+
+#name-intro:hover #name-ipa {
+  display: none;
+}
+
+#name-intro:hover #name-phonetic {
+  display: inline;
+}
+
